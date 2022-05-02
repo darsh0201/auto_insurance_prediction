@@ -10,12 +10,14 @@ with open(f'model/model6.pkl', 'rb') as f:
 app = flask.Flask(__name__, template_folder='templates')
 
 # Set up the main route
+
+
 @app.route('/', methods=['GET', 'POST'])
 def main():
     if flask.request.method == 'GET':
         # Just render the initial form, to get input
         return(flask.render_template('main.html'))
-    
+
     if flask.request.method == 'POST':
         # Extract the input
         CustomerLifetimeValue = flask.request.form['CustomerLifetimeValue']
@@ -31,22 +33,22 @@ def main():
         TotalClaimAmount = flask.request.form['TotalClaimAmount']
         VehicleClass = flask.request.form['VehicleClass']
         VehicleSize = flask.request.form['VehicleSize']
-        
 
         # Make DataFrame for model
-        input_variables = pd.DataFrame([[CustomerLifetimeValue,Coverage,Education,EmploymentStatus,Gender,Income,MaritalStatus,MonthsSinceLastClaim,MonthsSincePolicyInception,NumberofOpenComplaints,TotalClaimAmount,VehicleClass,VehicleSize]],
-                                       columns=['CustomerLifetimeValue','Coverage','Education','EmploymentStatus','Gender','Income','MaritalStatus','MonthsSinceLastClaim','MonthsSincePolicyInception','NumberofOpenComplaints','TotalClaimAmount','VehicleClass','VehicleSize'],
+        input_variables = pd.DataFrame([[CustomerLifetimeValue, Coverage, Education, EmploymentStatus, Gender, Income, MaritalStatus, MonthsSinceLastClaim, MonthsSincePolicyInception, NumberofOpenComplaints, TotalClaimAmount, VehicleClass, VehicleSize]],
+                                       columns=['CustomerLifetimeValue', 'Coverage', 'Education', 'EmploymentStatus', 'Gender', 'Income', 'MaritalStatus',
+                                                'MonthsSinceLastClaim', 'MonthsSincePolicyInception', 'NumberofOpenComplaints', 'TotalClaimAmount', 'VehicleClass', 'VehicleSize'],
                                        dtype=float,
                                        index=['input'])
 
         # Get the model's prediction
         prediction = model.predict(input_variables)[0]
-    
+
         # Render the form again, but add in the prediction and remind user
         # of the values they input before
         return flask.render_template('main.html',
                                      original_input={'CustomerLifetimeValue': CustomerLifetimeValue,
-                                                     'Coverage': Coverage,	
+                                                     'Coverage': Coverage,
                                                      'Education': Education,
                                                      'EmploymentStatus': EmploymentStatus,
                                                      'Gender': Gender,
@@ -58,9 +60,10 @@ def main():
                                                      'TotalClaimAmount': TotalClaimAmount,
                                                      'VehicleClass': VehicleClass,
                                                      'VehicleSize': VehicleSize,
-                                                    },
-                                     result=prediction,
+                                                     },
+                                     result=round(prediction),
                                      )
+
 
 if __name__ == '__main__':
     app.run()
