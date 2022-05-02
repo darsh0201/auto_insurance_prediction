@@ -1,0 +1,18 @@
+
+form {
+  margin: auto;
+  width: 35%;
+}
+
+.result {
+  margin: auto;
+  width: 35%;
+  border: 1px solid #ccc;
+}
+
+.heading{
+    background-color: aquamarine;
+    padding: 10px;
+    text-align: center;
+    margin-bottom: 15px;
+}

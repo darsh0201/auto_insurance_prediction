@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+  <link rel="stylesheet" href="../static/main.css" />
+
+  <head>
+    <title>Auto Insurance Premium Predictor</title>
+  </head>
+
+  <body>
+    <div class="heading"><h1>AutoInsuro</h1></div>
+    <h3>Insurance Calculator</h3>
+    <form action="{{ url_for('main') }}" method="POST">
+      <fieldset>
+        <legend>Input values:</legend>
+        Customer Lifetime Value:
+        <input name="CustomerLifetimeValue" type="number" required />
+        <br />
+        <br />
+        Coverage:
+        <input name="Coverage" type="number" required />
+        <br />
+        <br />
+        Education:
+        <input name="Education" type="number" required />
+        <br />
+        <br />
+        EmploymentStatus:
+        <input name="EmploymentStatus" type="number" required />
+        <br />
+        <br />
+        Gender:
+        <input name="Gender" type="number" required />
+        <br />
+        <br />
+        Income:
+        <input name="Income" type="number" required />
+        <br />
+        <br />
+        Marital Status:
+        <input name="MaritalStatus" type="number" required />
+        <br />
+        <br />
+        Months Since Last Claim :
+        <input name="MonthsSinceLastClaim" type="number" required />
+        <br />
+        <br />
+        Months Since Policy Inception:
+        <input name="MonthsSincePolicyInception" type="number" required />
+        <br />
+        <br />
+        Number of Open Complaints:
+        <input name="NumberofOpenComplaints" type="number" required />
+        <br />
+        <br />
+        Total Claim Amount:
+        <input name="TotalClaimAmount" type="number" required />
+        <br />
+        <br />
+        Vehicle Class:
+        <input name="VehicleClass" type="number" required />
+        <br />
+        <br />
+        Vehicle Size:
+        <input name="VehicleSize" type="number" required />
+        <br />
+        <br />
+        <input type="submit" />
+      </fieldset>
+    </form>
+    <br />
+    <div class="result" align="center">
+      {% if result %} {% for variable, value in original_input.items() %}
+      <b>{{ variable }}</b> : {{ value }} {% endfor %}
+      <br />
+      <br />
+      Predicted Charge of Premium for Auto Insurance:
+      <p style="font-size: 50px">{{ result }}</p>
+      {% endif %}
+    </div>
+  </body>
+</html>
