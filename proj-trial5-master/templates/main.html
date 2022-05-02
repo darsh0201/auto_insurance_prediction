@@ -46,6 +46,7 @@
           required
         />
         <br />
+        <p class="errorMessage top-arrow"></p>
         <br />
         Employment Status:<br />
         (Employed=0, Unemployed=1,Medical Leave=2, Disabled=3, Retired=4)<br />
@@ -56,6 +57,7 @@
           required
         />
         <br />
+        <p class="errorMessage top-arrow"></p>
         <br />
         Gender:<br />
         ('Male'=0, 'Female'=1)<br />
@@ -67,6 +69,7 @@
           required
         />
         <br />
+        <p class="errorMessage top-arrow"></p>
         <br />
         Income:<br />
         <input
@@ -86,6 +89,7 @@
           required
         />
         <br />
+        <p class="errorMessage top-arrow"></p>
         <br />
         Months Since Last Claim :<br />
         <input
@@ -134,6 +138,7 @@
           required
         />
         <br />
+        <p class="errorMessage top-arrow"></p>
         <br />
         Vehicle Size:<br />
         ('Medsize'=0, 'Small'=1, 'Large'=2)<br />
@@ -145,6 +150,7 @@
           required
         />
         <br />
+        <p class="errorMessage top-arrow"></p>
         <br />
         <input type="submit" />
       </fieldset>
@@ -152,10 +158,72 @@
     <script>
       function validateForm() {
         var coverageVal = document.forms["detailsform"]["Coverage"].value;
+        var educationVal = document.forms["detailsform"]["Education"].value;
+        var employmentVal =
+          document.forms["detailsform"]["EmploymentStatus"].value;
+        var genderVal = document.forms["detailsform"]["Gender"].value;
+        var maritalVal = document.forms["detailsform"]["MaritalStatus"].value;
+        var vehicleclassVal =
+          document.forms["detailsform"]["VehicleClass"].value;
+        var vehiclesizeVal = document.forms["detailsform"]["VehicleSize"].value;
         if (coverageVal >= 3 || coverageVal <= 0) {
           document.getElementsByClassName("errorMessage")[0].style.visibility =
             "visible";
           document.getElementsByClassName("errorMessage")[0].innerHTML =
+            "Invalid Input";
+          return false;
+        } else {
+          return true;
+        }
+        if (educationVal >= 5 || educationVal <= 0) {
+          document.getElementsByClassName("errorMessage")[1].style.visibility =
+            "visible";
+          document.getElementsByClassName("errorMessage")[1].innerHTML =
+            "Invalid Input";
+          return false;
+        } else {
+          return true;
+        }
+        if (employmentVal >= 5 || employmentVal <= 0) {
+          document.getElementsByClassName("errorMessage")[2].style.visibility =
+            "visible";
+          document.getElementsByClassName("errorMessage")[2].innerHTML =
+            "Invalid Input";
+          return false;
+        } else {
+          return true;
+        }
+        if (genderVal >= 2 || genderVal <= 0) {
+          document.getElementsByClassName("errorMessage")[3].style.visibility =
+            "visible";
+          document.getElementsByClassName("errorMessage")[3].innerHTML =
+            "Invalid Input";
+          return false;
+        } else {
+          return true;
+        }
+        if (maritalVal >= 3 || maritalVal <= 0) {
+          document.getElementsByClassName("errorMessage")[4].style.visibility =
+            "visible";
+          document.getElementsByClassName("errorMessage")[4].innerHTML =
+            "Invalid Input";
+          return false;
+        } else {
+          return true;
+        }
+        if (vehicleclassVal >= 6 || vehicleclassVal <= 0) {
+          document.getElementsByClassName("errorMessage")[5].style.visibility =
+            "visible";
+          document.getElementsByClassName("errorMessage")[5].innerHTML =
+            "Invalid Input";
+          return false;
+        } else {
+          return true;
+        }
+        if (vehiclesizeVal >= 3 || vehiclesizeVal <= 0) {
+          document.getElementsByClassName("errorMessage")[6].style.visibility =
+            "visible";
+          document.getElementsByClassName("errorMessage")[6].innerHTML =
             "Invalid Input";
           return false;
         } else {
