@@ -81,7 +81,61 @@ form {
               float: left;
               }
                   
-  .errorMessage.top-arrow:after {
+  .errorMessage1.top-arrow:after {
+    color: red;
+  content: " ";
+  position: absolute;
+  border-top: none;
+  border-right: 10px solid transparent;
+  border-left: 10px solid transparent;
+  border-bottom: 15px solid white;
+  }
+  .errorMessage2.top-arrow:after {
+    color: red;
+  content: " ";
+  position: absolute;
+  border-top: none;
+  border-right: 10px solid transparent;
+  border-left: 10px solid transparent;
+  border-bottom: 15px solid white;
+  }
+  .errorMessage3.top-arrow:after {
+    color: red;
+  content: " ";
+  position: absolute;
+  border-top: none;
+  border-right: 10px solid transparent;
+  border-left: 10px solid transparent;
+  border-bottom: 15px solid white;
+  }
+  .errorMessage4.top-arrow:after {
+    color: red;
+  content: " ";
+  position: absolute;
+  border-top: none;
+  border-right: 10px solid transparent;
+  border-left: 10px solid transparent;
+  border-bottom: 15px solid white;
+  }
+  .errorMessage5.top-arrow:after {
+    color: red;
+  content: " ";
+  position: absolute;
+  border-top: none;
+  border-right: 10px solid transparent;
+  border-left: 10px solid transparent;
+  border-bottom: 15px solid white;
+  }
+  .errorMessage6.top-arrow:after {
+    color: red;
+  content: " ";
+  position: absolute;
+  border-top: none;
+  border-right: 10px solid transparent;
+  border-left: 10px solid transparent;
+  border-bottom: 15px solid white;
+  }
+  .errorMessage7.top-arrow:after {
     color: red;
   content: " ";
   position: absolute;
