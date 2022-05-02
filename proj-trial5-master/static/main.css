@@ -22,7 +22,7 @@ form {
   margin-bottom: 20px;
 }
 
-.errorMessage {
+.errorMessage1 {
   color: red;
   background-color: white;
   padding: 5px;
@@ -30,6 +30,57 @@ form {
   position: relative;
   float: left;
   }
+  .errorMessage2 {
+    color: red;
+    background-color: white;
+    padding: 5px;
+    visibility: hidden;
+    position: relative;
+    float: left;
+    }
+    .errorMessage3 {
+      color: red;
+      background-color: white;
+      padding: 5px;
+      visibility: hidden;
+      position: relative;
+      float: left;
+      }
+      .errorMessage4 {
+        color: red;
+        background-color: white;
+        padding: 5px;
+        visibility: hidden;
+        position: relative;
+        float: left;
+        }
+        
+        .errorMessage5 {
+          color: red;
+          background-color: white;
+          padding: 5px;
+          visibility: hidden;
+          position: relative;
+          float: left;
+          }
+        
+          .errorMessage6 {
+            color: red;
+            background-color: white;
+            padding: 5px;
+            visibility: hidden;
+            position: relative;
+            float: left;
+            }
+            .errorMessage7 {
+              color: red;
+              background-color: white;
+              padding: 5px;
+              visibility: hidden;
+              position: relative;
+              float: left;
+              }
+                  
   .errorMessage.top-arrow:after {
     color: red;
   content: " ";
