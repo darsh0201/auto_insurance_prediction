@@ -7,61 +7,137 @@
   </head>
 
   <body>
-    <div class="heading"><h1>AutoInsuro</h1></div>
-    <h3>Insurance Calculator</h3>
+    <div class="heading"><h1>AUTOINSURO</h1></div>
+    <div class="title2"><h3>Insurance Calculator</h3></div>
     <form action="{{ url_for('main') }}" method="POST">
       <fieldset>
         <legend>Input values:</legend>
-        Customer Lifetime Value:
-        <input name="CustomerLifetimeValue" type="number" required />
+        Customer Lifetime Value:<br />
+        <input
+          name="CustomerLifetimeValue"
+          type="number"
+          placeholder="Enter Customer Lifetime Value "
+          required
+        />
         <br />
         <br />
-        Coverage:
-        <input name="Coverage" type="number" required />
+        Coverage:<br />
+        (Basic=0, Extended=1,Premium=2)<br />
+        <input
+          name="Coverage"
+          type="number"
+          placeholder="Enter Coverage"
+          required
+        />
         <br />
         <br />
-        Education:
-        <input name="Education" type="number" required />
+        Education:<br />
+        (Bachelor=0, College=1,Master=2, High School or Below=3, Doctor=4)<br />
+        <input
+          name="Education"
+          type="number"
+          placeholder="Enter Education"
+          required
+        />
         <br />
         <br />
-        EmploymentStatus:
-        <input name="EmploymentStatus" type="number" required />
+        Employment Status:<br />
+        (Employed=0, Unemployed=1,Medical Leave=2, Disabled=3, Retired=4)<br />
+        <input
+          name="EmploymentStatus"
+          type="number"
+          placeholder="Enter Employment Status "
+          required
+        />
         <br />
         <br />
-        Gender:
-        <input name="Gender" type="number" required />
+        Gender:<br />
+        ('Male'=0, 'Female'=1)<br />
+
+        <input
+          name="Gender"
+          type="number"
+          placeholder="Enter Gender"
+          required
+        />
         <br />
         <br />
-        Income:
-        <input name="Income" type="number" required />
+        Income:<br />
+        <input
+          name="Income"
+          type="number"
+          placeholder="Enter Income"
+          required
+        />
         <br />
         <br />
-        Marital Status:
-        <input name="MaritalStatus" type="number" required />
+        Marital Status:<br />
+        ('Married'=0, 'Single'=1,'Divorced'=2)<br />
+        <input
+          name="MaritalStatus"
+          type="number"
+          placeholder="Enter Marital Status"
+          required
+        />
         <br />
         <br />
-        Months Since Last Claim :
-        <input name="MonthsSinceLastClaim" type="number" required />
+        Months Since Last Claim :<br />
+        <input
+          name="MonthsSinceLastClaim"
+          type="number"
+          placeholder="Enter Months Since Last Claim"
+          required
+        />
         <br />
         <br />
-        Months Since Policy Inception:
-        <input name="MonthsSincePolicyInception" type="number" required />
+        Months Since Policy Inception:<br />
+        <input
+          name="MonthsSincePolicyInception"
+          type="number"
+          placeholder="Enter Months Since Policy Inception"
+          required
+        />
         <br />
         <br />
-        Number of Open Complaints:
-        <input name="NumberofOpenComplaints" type="number" required />
+        Number of Open Complaints:<br />
+        <input
+          name="NumberofOpenComplaints"
+          type="number"
+          placeholder="Enter Number of Open Complaints"
+          required
+        />
         <br />
         <br />
-        Total Claim Amount:
-        <input name="TotalClaimAmount" type="number" required />
+        Total Claim Amount:<br />
+
+        <input
+          name="TotalClaimAmount"
+          type="number"
+          placeholder="Enter Total Claim Amount"
+          required
+        />
         <br />
         <br />
-        Vehicle Class:
-        <input name="VehicleClass" type="number" required />
+        Vehicle Class:<br />
+        ('Two-Door Car'=0, 'Four-Door Car'=1, 'SUV'=2,'Luxury SUV'=3,'Sports
+        Car'=4,'Luxury Car'=5)<br />
+        <input
+          name="VehicleClass"
+          type="number"
+          placeholder="Enter Vehicle Class"
+          required
+        />
         <br />
         <br />
-        Vehicle Size:
-        <input name="VehicleSize" type="number" required />
+        Vehicle Size:<br />
+        ('Medsize'=0, 'Small'=1, 'Large'=2)<br />
+        <div class="VehicleSizeInput"></div>
+        <input
+          name="VehicleSize"
+          type="number"
+          placeholder="Enter Vehicle Size"
+          required
+        />
         <br />
         <br />
         <input type="submit" />
