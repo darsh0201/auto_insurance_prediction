@@ -8,8 +8,13 @@
 
   <body>
     <div class="heading"><h1>AUTOINSURO</h1></div>
-    <div class="title2"><h3>Insurance Calculator</h3></div>
-    <form name="detailsform" action="{{ url_for('main') }}" method="POST">
+    <div class="title2"><h2>Insurance Calculator</h2></div>
+    <form
+      name="detailsform"
+      action="{{ url_for('main') }}"
+      method="POST"
+      onsubmit="return validateForm()"
+    >
       <fieldset>
         <legend>Input values:</legend>
         Customer Lifetime Value:<br />
@@ -23,7 +28,6 @@
         <br />
         Coverage:<br />
         (Basic=0, Extended=1,Premium=2)<br />
-        <p class="errorMessage top-arrow"></p>
         <input
           name="Coverage"
           type="number"
@@ -31,6 +35,7 @@
           required
         />
         <br />
+        <p class="errorMessage top-arrow"></p>
         <br />
         Education:<br />
         (Bachelor=0, College=1,Master=2, High School or Below=3, Doctor=4)<br />
