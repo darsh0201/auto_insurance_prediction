@@ -9,7 +9,7 @@
   <body>
     <div class="heading"><h1>AUTOINSURO</h1></div>
     <div class="title2"><h3>Insurance Calculator</h3></div>
-    <form action="{{ url_for('main') }}" method="POST">
+    <form name="detailsform" action="{{ url_for('main') }}" method="POST">
       <fieldset>
         <legend>Input values:</legend>
         Customer Lifetime Value:<br />
@@ -23,6 +23,7 @@
         <br />
         Coverage:<br />
         (Basic=0, Extended=1,Premium=2)<br />
+        <p class="errorMessage top-arrow"></p>
         <input
           name="Coverage"
           type="number"
@@ -143,6 +144,20 @@
         <input type="submit" />
       </fieldset>
     </form>
+    <script>
+      function validateForm() {
+        var coverageVal = document.forms["detailsform"]["Coverage"].value;
+        if (coverageVal >= 3 || coverageVal <= 0) {
+          document.getElementsByClassName("errorMessage")[0].style.visibility =
+            "visible";
+          document.getElementsByClassName("errorMessage")[0].innerHTML =
+            "Invalid Input";
+          return false;
+        } else {
+          return true;
+        }
+      }
+    </script>
     <br />
     <div class="result" align="center">
       {% if result %} {% for variable, value in original_input.items() %}
