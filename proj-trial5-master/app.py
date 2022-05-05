@@ -14,7 +14,7 @@ app = flask.Flask(__name__, template_folder='templates')
 
 # Configure db
 db = yaml.safe_load(open(
-    'C:/Users/Darsh/OneDrive/Desktop/auto_insurance_copy/proj-trial5-master/db.yaml'))
+    'C:/Users/Darsh/OneDrive/Desktop/auto_insurance_mysql/proj-trial5-master/db.yaml'))
 app.config['MYSQL_HOST'] = db['mysql_host']
 app.config['MYSQL_USER'] = db['mysql_user']
 app.config['MYSQL_PASSWORD'] = db['mysql_password']
