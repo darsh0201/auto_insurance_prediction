@@ -1,6 +1,15 @@
 <!DOCTYPE html>
 <html>
   <link rel="stylesheet" href="../static/main.css" />
+  <style>
+    body {
+      background-image: url("https://media.istockphoto.com/photos/insurance-protecting-family-health-live-house-and-car-concept-picture-id1199060494?k=20&m=1199060494&s=612x612&w=0&h=Jw_XYEFO42jcs4aBFdbiEnPPNODyYjvQCpcrmXnCazM=");
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      background-position: center;
+      background-size: cover;
+    }
+  </style>
 
   <head>
     <title>Auto Insurance Premium Predictor</title>
@@ -13,7 +22,7 @@
       name="detailsform"
       action="{{ url_for('main') }}"
       method="POST"
-      onsubmit="return validateForm()"
+      onsubmit="validateForm()"
     >
       <fieldset>
         <legend>Input values:</legend>
@@ -155,82 +164,7 @@
         <input type="submit" />
       </fieldset>
     </form>
-    <script>
-      function validateForm() {
-        var coverageVal = document.forms["detailsform"]["Coverage"].value;
-        var educationVal = document.forms["detailsform"]["Education"].value;
-        var employmentVal =
-          document.forms["detailsform"]["EmploymentStatus"].value;
-        var genderVal = document.forms["detailsform"]["Gender"].value;
-        var maritalVal = document.forms["detailsform"]["MaritalStatus"].value;
-        var vehicleclassVal =
-          document.forms["detailsform"]["VehicleClass"].value;
-        var vehiclesizeVal = document.forms["detailsform"]["VehicleSize"].value;
-        if (coverageVal >= 3 || coverageVal <= 0) {
-          document.getElementsByClassName("errorMessage1")[0].style.visibility =
-            "visible";
-          document.getElementsByClassName("errorMessage1")[0].innerHTML =
-            "Invalid Input";
-          return false;
-        } else {
-          return true;
-        }
-        if (educationVal >= 5 || educationVal <= 0) {
-          document.getElementsByClassName("errorMessage2")[0].style.visibility =
-            "visible";
-          document.getElementsByClassName("errorMessage2")[0].innerHTML =
-            "Invalid Input";
-          return false;
-        } else {
-          return true;
-        }
-        if (employmentVal >= 5 || employmentVal <= 0) {
-          document.getElementsByClassName("errorMessage3")[0].style.visibility =
-            "visible";
-          document.getElementsByClassName("errorMessage3")[0].innerHTML =
-            "Invalid Input";
-          return false;
-        } else {
-          return true;
-        }
-        if (genderVal >= 2 || genderVal <= 0) {
-          document.getElementsByClassName("errorMessage4")[0].style.visibility =
-            "visible";
-          document.getElementsByClassName("errorMessage4")[0].innerHTML =
-            "Invalid Input";
-          return false;
-        } else {
-          return true;
-        }
-        if (maritalVal >= 3 || maritalVal <= 0) {
-          document.getElementsByClassName("errorMessage5")[0].style.visibility =
-            "visible";
-          document.getElementsByClassName("errorMessage5")[0].innerHTML =
-            "Invalid Input";
-          return false;
-        } else {
-          return true;
-        }
-        if (vehicleclassVal >= 6 || vehicleclassVal <= 0) {
-          document.getElementsByClassName("errorMessage6")[0].style.visibility =
-            "visible";
-          document.getElementsByClassName("errorMessage6")[0].innerHTML =
-            "Invalid Input";
-          return false;
-        } else {
-          return true;
-        }
-        if (vehiclesizeVal >= 3 || vehiclesizeVal <= 0) {
-          document.getElementsByClassName("errorMessage7")[0].style.visibility =
-            "visible";
-          document.getElementsByClassName("errorMessage7")[0].innerHTML =
-            "Invalid Input";
-          return false;
-        } else {
-          return true;
-        }
-      }
-    </script>
+
     <br />
     <div class="result" align="center">
       {% if result %} {% for variable, value in original_input.items() %}
@@ -240,6 +174,14 @@
       Predicted Charge of Premium for Auto Insurance:
       <p style="font-size: 50px">{{ result }}</p>
       {% endif %}
+    </div>
+
+    <div class="customer">
+      <h3>Are you interested in getting an insurance?</h3>
+
+      <button onclick="location.href='http://127.0.0.1:5000/contact'">
+        Click Here
+      </button>
     </div>
   </body>
 </html>
