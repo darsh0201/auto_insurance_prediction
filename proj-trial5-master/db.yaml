@@ -1,4 +1,4 @@
-mysql_host: 'postgres://bykozpfqqwgrpj:22978239340e483a468652882ba51bf4fedd13814d5a69563f3b768f6464012e@ec2-63-35-156-160.eu-west-1.compute.amazonaws.com:5432/dvh35feqndcnd'
-mysql_user: 'bykozpfqqwgrpj'
-mysql_password: 'Darsh@0201'
+mysql_host: 'localhost'
+mysql_user: 'root'
+mysql_password: '1234'
 mysql_db: 'autoinsurance'
